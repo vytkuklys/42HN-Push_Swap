@@ -2,12 +2,12 @@
 
 NAME=push_swap
 FLAGS=-Werror -Wextra -Wall
-SRC=*.c
+SRC= src/big_sort.c src/helpers/checkers.c src/helpers/counters.c src/helpers/exit.c src/helpers/init.c src/main.c src/merge_sort.c src/operations/operation_cluster.c src/operations/operations.c src/helpers/push_swap_utils.c src/small_sort.c
 INCLUDES=libft/libft.a
 
 all: $(NAME_SERVER) $(NAME_CLIENT)
 	@make -C libft/ bonus
-	gcc $(SRC) $(FLAGS) $(INCLUDES) -o $(NAME)
+	gcc $(FLAGS) $(SRC) $(INCLUDES) -o $(NAME)
 
 clean:
 	@make -C libft/ clean
