@@ -1,27 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_free_2d_array.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vkuklys <vkuklys@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/15 18:08:36 by vkuklys           #+#    #+#             */
-/*   Updated: 2021/09/15 16:15:12 by vkuklys          ###   ########.fr       */
+/*   Created: 2021/09/15 22:16:21 by vkuklys           #+#    #+#             */
+/*   Updated: 2021/09/17 21:05:44 by vkuklys          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_node
-	*ft_lstnew(int content)
+char	*ft_free_2d_array(char ***arr, unsigned int allocated)
 {
-	t_node	*new;
+	unsigned int	i;
+	unsigned int	CURRENT;
 
-	new = (t_node *)malloc(sizeof(t_node));
-	if (new == NULL)
+	CURRENT = 1;
+	if (*arr == NULL)
 		return (NULL);
-	new->num = content;
-	new->sorted = 0;
-	new->next = NULL;
-	return (new);
+	i = 0;
+	while (i < allocated + CURRENT)
+	{
+		free((*arr)[i]);
+		i++;
+	}
+	free(*arr);
+	*arr = NULL;
+	return (NULL);
 }

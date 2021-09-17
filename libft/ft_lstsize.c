@@ -6,7 +6,7 @@
 /*   By: vkuklys <vkuklys@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/15 18:08:40 by vkuklys           #+#    #+#             */
-/*   Updated: 2021/07/16 22:35:29 by vkuklys          ###   ########.fr       */
+/*   Updated: 2021/09/14 22:07:59 by vkuklys          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int
 	if (lst == NULL)
 		return (0);
 	else if (lst->next == NULL)
-		return (1);
+		return (count);
 	while (lst->next != NULL)
 	{
 		lst = lst->next;

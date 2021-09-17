@@ -6,7 +6,7 @@
 /*   By: vkuklys <vkuklys@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/14 12:26:45 by vkuklys           #+#    #+#             */
-/*   Updated: 2021/07/16 22:43:52 by vkuklys          ###   ########.fr       */
+/*   Updated: 2021/09/17 21:06:08 by vkuklys          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ static int
 	return (2);
 }
 
-int
+long long
 	ft_atoi(const char *str)
 {
 	long long		num;

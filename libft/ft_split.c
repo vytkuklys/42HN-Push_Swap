@@ -6,7 +6,7 @@
 /*   By: vkuklys <vkuklys@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/14 12:28:05 by vkuklys           #+#    #+#             */
-/*   Updated: 2021/07/19 20:45:29 by vkuklys          ###   ########.fr       */
+/*   Updated: 2021/09/16 19:20:12 by vkuklys          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,25 +40,6 @@ static int
 	return (num);
 }
 
-static void
-	ft_free_array(char **arr, unsigned int allocated)
-{
-	unsigned int	i;
-	unsigned int	CURRENT;
-
-	CURRENT = 1;
-	if (arr == NULL)
-		return ;
-	i = 0;
-	while (i < allocated + CURRENT)
-	{
-		free((arr)[i]);
-		i++;
-	}
-	free(arr);
-	arr = NULL;
-}
-
 static unsigned int
 	ft_get_ending_num(const char *s, char c)
 {
@@ -87,7 +68,7 @@ static int
 			arr[jk[0]] = ft_substr(s, jk[1], length);
 			if (arr[jk[0]] == NULL)
 			{
-				ft_free_array(arr, jk[0]);
+				ft_free_2d_array(&arr, jk[0]);
 				return (0);
 			}
 			jk[1] += length;

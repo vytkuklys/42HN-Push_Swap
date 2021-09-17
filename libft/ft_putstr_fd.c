@@ -6,17 +6,18 @@
 /*   By: vkuklys <vkuklys@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/14 12:28:01 by vkuklys           #+#    #+#             */
-/*   Updated: 2021/07/20 16:20:45 by vkuklys          ###   ########.fr       */
+/*   Updated: 2021/09/16 16:52:37 by vkuklys          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void
+int
 	ft_putstr_fd(char *s, int fd)
 {
 	if (s == NULL)
-		return ;
+		return (1);
 	while (*s != '\0')
 		write(fd, &*s++, 1);
+	return (1);
 }
